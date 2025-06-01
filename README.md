@@ -22,13 +22,3 @@ Fast Food Janković je moderna web aplikacija za upravljanje brzom hranom, namen
 - Ažuriranje statusa porudžbine u realnom vremenu
 - Podešavanje teme (svetla/tamna)
 
-## Instalacija i pokretanje
-
-Pokrenite frontend aplikaciju (React):
-
-bash
-
-cd frontend
-npm install
-npm start
-Pristupite aplikaciji na http://localhost:3000
