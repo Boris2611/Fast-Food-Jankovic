@@ -1,0 +1,81 @@
+{
+  "info": {
+    "name": "Fast Food Janković API",
+    "_postman_id": "ffj-api-collection-001",
+    "description": "Postman kolekcija za testiranje REST API-ja Fast Food Janković",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Registracija korisnika",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"testuser\",\n  \"password\": \"testpass\",\n  \"role\": \"USER\"\n}"
+        },
+        "url": {
+          "raw": "http://192.168.8.139:8080/api/auth/register"
+        }
+      }
+    },
+    {
+      "name": "Login korisnika",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"testuser\",\n  \"password\": \"testpass\"\n}"
+        },
+        "url": {
+          "raw": "http://192.168.8.139:8080/api/auth/login"
+        }
+      }
+    },
+    {
+      "name": "Preuzmi sve proizvode",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://192.168.8.139:8080/api/products"
+        }
+      }
+    },
+    {
+      "name": "Kreiraj novi proizvod",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{jwt_token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Burger Classic\",\n  \"description\": \"Sočan burger sa sirom\",\n  \"price\": 490,\n  \"category\": \"Burgeri\"\n}"
+        },
+        "url": {
+          "raw": "http://192.168.8.139:8080/api/products"
+        }
+      }
+    }
+  ]
+}
